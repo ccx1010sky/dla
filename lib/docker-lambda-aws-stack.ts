@@ -23,5 +23,11 @@ export class DockerLambdaAwsStack extends cdk.Stack {
         allowedOrigins:["*"],
       }
     })
+
+    new cdk.CfnOutput(this,"FunctionUrlValue",{
+      value:functionUrl.url
+    })
+
+
   }
 }
